@@ -7,7 +7,8 @@ import {
   Typography,
   CardActions,
 } from "@mui/material";
-
+import TerminalRoundedIcon from "@mui/icons-material/Terminal";
+import IconButton from "@mui/material/IconButton";
 import Grid from "@mui/material/Grid";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -41,9 +42,7 @@ export class Cards extends React.Component {
 
   render() {
     if (this.state.itterator == 1) {
-      setTimeout(() => {
-        this.setState({ expanded: true, itterator: 2 });
-      }, 10);
+      this.setState({ expanded: true, itterator: 2 });
     }
     return (
       <div>
@@ -180,6 +179,36 @@ export class Cards extends React.Component {
               );
             })}
           </Grid>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
+            <Typography
+              component="a"
+              href="https://shafinmurani.github.io"
+              style={{
+                color: "unset",
+              }}
+              variant="body2"
+            >
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 0 }}
+                style={{ cursor: "default" }}
+                disableRipple
+              >
+                <TerminalRoundedIcon />
+              </IconButton>
+              Shafin Murani
+            </Typography>
+          </div>
         </div>
       </div>
     );
